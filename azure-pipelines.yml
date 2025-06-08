@@ -1,0 +1,15 @@
+trigger:
+-main
+
+pool:
+name:Default
+
+steps:
+-script:echo Hello, its my Azure Devops App
+displayName:'run an echo command'
+
+-script:mvn clean install
+displayName:'build with maven'
+
+-script:java -jar target/azureformav-0.0.1-SNAPSHOT.jar
+displayName:'run a jar file of my azureformav App'
